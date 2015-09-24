@@ -59,7 +59,16 @@ void Particle::update(const ci::Perlin& _perlin,
 void Particle::draw()
 {
 	ci::gl::color(ci::Color(mColorVec.x, mColorVec.y, mColorVec.z));
+
+	ci::gl::pushModelView();
+
+	ci::gl::translate(mPos);
+	ci::gl::rotate(360.f*sin(ci::app::getElapsedSeconds()));
+	ci::gl::translate(-mPos);
+
 	ci::gl::drawSolidCircle(mPos, mRadius, mSegments);
+
+	ci::gl::popModelView();
 }
 
 ci::Vec2f Particle::getPosition() const

@@ -30,7 +30,7 @@ class HelloCinderApp : public AppBasic {
 void HelloCinderApp::prepareSettings(Settings *settings)
 {
 	settings->setFrameRate(60.f);
-	settings->setWindowSize(1024, 768);
+	settings->setWindowSize(1024, 700);
 }
 
 void HelloCinderApp::setup()
